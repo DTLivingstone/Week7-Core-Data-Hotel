@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) ViewController *viewController;
 
 @end
 
@@ -16,27 +20,90 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self setupRootViewController];
+//    [self loadJson];
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+- (void)setupRootViewController {
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    self.viewController = [[ViewController alloc]init];
+    self.navigationController = [[UINavigationController alloc]initWithRootViewController:self.viewController];
+    self.window.rootViewController = self.navigationController;
+
+    [self.window makeKeyAndVisible];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
+//- (void)loadJson {
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+//    NSError *error;
+//    
+//    NSInteger count = [self.managedObjectContext countForFetchRequest:request
+//                                                                error:&error];
+//    
+//    if (count == 0) {
+//        
+//        NSDictionary *hotels = [NSDictionary new];
+//        NSDictionary *rooms = [NSDictionary new];
+//
+//        NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
+//        NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+//        
+//        NSError *jsonError;
+//        NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData
+//                                                                   options:0
+//                                                                     error:&jsonError];
+//        
+//        if (jsonError) {
+//            NSLog(@"JSON error: %@", jsonError);
+//        } else {
+//            
+//            hotels = rootObject[@"Hotels"];
+//            
+//            for (NSDictionary *hotel in hotels) {
+//                
+//                Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel"
+//                                                                inManagedObjectContext:self.managedObjectContext];
+//                newHotel.name = hotel[@"name"];
+//                newHotel.location = hotel[@"location"];
+//                newHotel.stars = hotel[@"stars"];
+//                
+//                rooms = hotel[@"rooms"];
+//                
+//                NSMutableSet *rooms = [[NSMutableSet alloc]init];
+//                
+//                for (NSDictionary *room in rooms) {
+//                    
+//                    Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room"
+//                                                                  inManagedObjectContext:self.managedObjectContext];
+//                    
+//                    newRoom.number = room[@"number"];
+//                    newRoom.beds = room[@"beds"];
+//                    newRoom.rate = room[@"rate"];
+//                    newRoom.hotel = newHotel;
+//                    
+//                    [rooms addObject:newRoom];
+//                }
+//                
+//                newHotel.rooms = rooms;
+//            }
+//            
+//            NSError *saveError;
+//            BOOL isSaved = [self.managedObjectContext save:&saveError];
+//            
+//            if (isSaved) {
+//                NSLog(@"data saved");
+//            } else {
+//                NSLog(@"error saving");
+//            }
+//        }
+//    } else {
+//        NSLog(@"database already created");
+//    }
+//}
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-}
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
