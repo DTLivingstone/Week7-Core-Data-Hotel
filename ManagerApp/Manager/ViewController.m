@@ -14,14 +14,29 @@
 
 @implementation ViewController
 
+-(void)loadView {
+    [super loadView];
+    
+    [self setupCustomLayout];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self setupViewController];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+}
+
+- (void)setupViewController {
+    [self.navigationItem setTitle:@"🏨 💁"];
+}
+
+- (void)setupCustomLayout {
+    //
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
