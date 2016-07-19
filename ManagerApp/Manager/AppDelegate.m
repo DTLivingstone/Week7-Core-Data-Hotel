@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Hotel.h"
+#import "Room.h"
+#import "Reservation.h"
+#import "Guest.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +25,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupRootViewController];
-//    [self loadJson];
+    [self loadJson];
     
     return YES;
 }
@@ -35,73 +39,73 @@
     [self.window makeKeyAndVisible];
 }
 
-//- (void)loadJson {
-//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
-//    NSError *error;
-//    
-//    NSInteger count = [self.managedObjectContext countForFetchRequest:request
-//                                                                error:&error];
-//    
-//    if (count == 0) {
-//        
-//        NSDictionary *hotels = [NSDictionary new];
-//        NSDictionary *rooms = [NSDictionary new];
-//
-//        NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
-//        NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
-//        
-//        NSError *jsonError;
-//        NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData
-//                                                                   options:0
-//                                                                     error:&jsonError];
-//        
-//        if (jsonError) {
-//            NSLog(@"JSON error: %@", jsonError);
-//        } else {
-//            
-//            hotels = rootObject[@"Hotels"];
-//            
-//            for (NSDictionary *hotel in hotels) {
-//                
-//                Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel"
-//                                                                inManagedObjectContext:self.managedObjectContext];
-//                newHotel.name = hotel[@"name"];
-//                newHotel.location = hotel[@"location"];
-//                newHotel.stars = hotel[@"stars"];
-//                
-//                rooms = hotel[@"rooms"];
-//                
-//                NSMutableSet *rooms = [[NSMutableSet alloc]init];
-//                
-//                for (NSDictionary *room in rooms) {
-//                    
-//                    Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room"
-//                                                                  inManagedObjectContext:self.managedObjectContext];
-//                    
-//                    newRoom.number = room[@"number"];
-//                    newRoom.beds = room[@"beds"];
-//                    newRoom.rate = room[@"rate"];
-//                    newRoom.hotel = newHotel;
-//                    
-//                    [rooms addObject:newRoom];
-//                }
-//                
-//                newHotel.rooms = rooms;
-//            }
-//            
-//            NSError *saveError;
-//            BOOL isSaved = [self.managedObjectContext save:&saveError];
-//            
-//            if (isSaved) {
-//                NSLog(@"data saved");
-//            } else {
-//                NSLog(@"error saving");
-//            }
-//        }
-//    } else {
-//        NSLog(@"database already created");
-//    }
-//}
+- (void)loadJson {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
+    NSError *error;
+    
+    NSInteger count = [self.managedObjectContext countForFetchRequest:request
+                                                                error:&error];
+    
+    if (count == 0) {
+        
+        NSDictionary *hotels = [NSDictionary new];
+        NSDictionary *rooms = [NSDictionary new];
+
+        NSString *jsonPath = [[NSBundle mainBundle]pathForResource:@"hotels" ofType:@"json"];
+        NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
+        
+        NSError *jsonError;
+        NSDictionary *rootObject = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                                   options:0
+                                                                     error:&jsonError];
+        
+        if (jsonError) {
+            NSLog(@"JSON error: %@", jsonError);
+        } else {
+            
+            hotels = rootObject[@"Hotels"];
+            
+            for (NSDictionary *hotel in hotels) {
+                
+                Hotel *newHotel = [NSEntityDescription insertNewObjectForEntityForName:@"Hotel"
+                                                                inManagedObjectContext:self.managedObjectContext];
+                newHotel.name = hotel[@"name"];
+                newHotel.location = hotel[@"location"];
+                newHotel.stars = hotel[@"stars"];
+                
+                rooms = hotel[@"rooms"];
+                
+                NSMutableSet *rooms = [[NSMutableSet alloc]init];
+                
+                for (NSDictionary *room in rooms) {
+                    
+                    Room *newRoom = [NSEntityDescription insertNewObjectForEntityForName:@"Room"
+                                                                  inManagedObjectContext:self.managedObjectContext];
+                    
+                    newRoom.number = room[@"number"];
+                    newRoom.beds = room[@"beds"];
+                    newRoom.rate = room[@"rate"];
+                    newRoom.hotel = newHotel;
+                    
+                    [rooms addObject:newRoom];
+                }
+                
+                newHotel.rooms = rooms;
+            }
+            
+            NSError *saveError;
+            BOOL isSaved = [self.managedObjectContext save:&saveError];
+            
+            if (isSaved) {
+                NSLog(@"data saved");
+            } else {
+                NSLog(@"error saving");
+            }
+        }
+    } else {
+        NSLog(@"database already created");
+    }
+}
 
 
 
