@@ -13,6 +13,8 @@
 		6306EE121D3D74020011F7E6 /* Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6306EE101D3D74020011F7E6 /* Manager.xcdatamodeld */; };
 		6306EE141D3D74020011F7E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6306EE131D3D74020011F7E6 /* Assets.xcassets */; };
 		6306EE171D3D74020011F7E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6306EE151D3D74020011F7E6 /* LaunchScreen.storyboard */; };
+		631D1CA61D3E6E9500912573 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631D1CA51D3E6E9500912573 /* RoomsViewController.m */; };
+		6329CCE11D3E5198007E682C /* HotelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6329CCE01D3E5198007E682C /* HotelsViewController.m */; };
 		63958CBA1D3DA46600AB2AC8 /* Guest+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63958CAB1D3DA46600AB2AC8 /* Guest+CoreDataProperties.m */; };
 		63958CBB1D3DA46600AB2AC8 /* Guest.m in Sources */ = {isa = PBXBuildFile; fileRef = 63958CAD1D3DA46600AB2AC8 /* Guest.m */; };
 		63958CBC1D3DA46600AB2AC8 /* Reservation+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 63958CAF1D3DA46600AB2AC8 /* Reservation+CoreDataProperties.m */; };
@@ -37,6 +39,10 @@
 		6306EE131D3D74020011F7E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6306EE161D3D74020011F7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6306EE181D3D74020011F7E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631D1CA41D3E6E9500912573 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
+		631D1CA51D3E6E9500912573 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
+		6329CCDF1D3E5198007E682C /* HotelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotelsViewController.h; sourceTree = "<group>"; };
+		6329CCE01D3E5198007E682C /* HotelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotelsViewController.m; sourceTree = "<group>"; };
 		63958CAA1D3DA46600AB2AC8 /* Guest+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Guest+CoreDataProperties.h"; sourceTree = "<group>"; };
 		63958CAB1D3DA46600AB2AC8 /* Guest+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Guest+CoreDataProperties.m"; sourceTree = "<group>"; };
 		63958CAC1D3DA46600AB2AC8 /* Guest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Guest.h; sourceTree = "<group>"; };
@@ -164,6 +170,10 @@
 			children = (
 				6306EE0A1D3D74020011F7E6 /* ViewController.h */,
 				6306EE0B1D3D74020011F7E6 /* ViewController.m */,
+				631D1CA41D3E6E9500912573 /* RoomsViewController.h */,
+				631D1CA51D3E6E9500912573 /* RoomsViewController.m */,
+				6329CCDF1D3E5198007E682C /* HotelsViewController.h */,
+				6329CCE01D3E5198007E682C /* HotelsViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				63958CBF1D3DA46600AB2AC8 /* Room.m in Sources */,
+				6329CCE11D3E5198007E682C /* HotelsViewController.m in Sources */,
 				63958CBE1D3DA46600AB2AC8 /* Room+CoreDataProperties.m in Sources */,
 				63958CBB1D3DA46600AB2AC8 /* Guest.m in Sources */,
 				63958CBA1D3DA46600AB2AC8 /* Guest+CoreDataProperties.m in Sources */,
@@ -250,6 +261,7 @@
 				6306EE0C1D3D74020011F7E6 /* ViewController.m in Sources */,
 				6306EE091D3D74020011F7E6 /* AppDelegate.m in Sources */,
 				63958CBC1D3DA46600AB2AC8 /* Reservation+CoreDataProperties.m in Sources */,
+				631D1CA61D3E6E9500912573 /* RoomsViewController.m in Sources */,
 				6306EE061D3D74020011F7E6 /* main.m in Sources */,
 				6306EE121D3D74020011F7E6 /* Manager.xcdatamodeld in Sources */,
 			);

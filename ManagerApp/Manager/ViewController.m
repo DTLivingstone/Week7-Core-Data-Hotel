@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HotelsViewController.h"
 
 @interface ViewController ()
 
@@ -35,7 +36,7 @@
     
     // get nav bar height
     
-    float navHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
+//    float navHeight = CGRectGetHeight(self.navigationController.navigationBar.frame);
     
     // create buttons
     
@@ -46,9 +47,9 @@
     
     // set button titles
     
-    [browseButton setTitle:@"Browse" forState:UIControlStateNormal];
-    [bookButton setTitle:@"Book" forState:UIControlStateNormal];
-    [lookupButton setTitle:@"Lookup" forState:UIControlStateNormal];
+    [browseButton setTitle:@"Browse Hotels" forState:UIControlStateNormal];
+    [bookButton setTitle:@"Book A Room" forState:UIControlStateNormal];
+    [lookupButton setTitle:@"Lookup A Reservation" forState:UIControlStateNormal];
     
     // set button background colors
     
@@ -76,22 +77,19 @@
     
     // set button constraints
     
-    float gutter = 32.0;
-    
     NSLayoutConstraint *browseButtonLeading = [NSLayoutConstraint constraintWithItem:browseButton
                                                                            attribute:NSLayoutAttributeLeading
                                                                            relatedBy:NSLayoutRelationEqual
                                                                               toItem:self.view
                                                                            attribute:NSLayoutAttributeLeading
-                                                                          multiplier:1.0
-                                                                            constant:gutter];
+                                                                          multiplier:1.0 constant:0.0];
     
     NSLayoutConstraint *browseButtonTop = [NSLayoutConstraint constraintWithItem:browseButton
                                                                        attribute:NSLayoutAttributeTop
                                                                        relatedBy:NSLayoutRelationEqual
                                                                           toItem:self.view
                                                                        attribute:NSLayoutAttributeTop
-                                                                      multiplier:.14
+                                                                      multiplier:1.0
                                                                         constant:64.0];
     
     NSLayoutConstraint *browseButtonTrailing = [NSLayoutConstraint constraintWithItem:browseButton
@@ -100,7 +98,7 @@
                                                                                toItem:self.view
                                                                             attribute:NSLayoutAttributeTrailing
                                                                            multiplier:1.0
-                                                                             constant:gutter];
+                                                                             constant:0.0];
     
     NSLayoutConstraint *bookButtonLeading = [NSLayoutConstraint constraintWithItem:bookButton
                                                                          attribute:NSLayoutAttributeLeading
@@ -108,7 +106,7 @@
                                                                             toItem:self.view
                                                                          attribute:NSLayoutAttributeLeading
                                                                         multiplier:1.0
-                                                                          constant:gutter];
+                                                                          constant:0.0];
     
     NSLayoutConstraint *bookButtonCenterY= [NSLayoutConstraint constraintWithItem:bookButton
                                                                         attribute:NSLayoutAttributeCenterY
@@ -116,7 +114,7 @@
                                                                            toItem:self.view
                                                                         attribute:NSLayoutAttributeCenterY
                                                                        multiplier:1.0
-                                                                         constant:navHeight / 1.4];
+                                                                         constant:0.0];
     
     NSLayoutConstraint *bookButtonTrailing = [NSLayoutConstraint constraintWithItem:bookButton
                                                                           attribute:NSLayoutAttributeTrailing
@@ -124,7 +122,7 @@
                                                                              toItem:self.view
                                                                           attribute:NSLayoutAttributeTrailing
                                                                          multiplier:1.0
-                                                                           constant:gutter];
+                                                                           constant:0.0];
     
     NSLayoutConstraint *lookupButtonLeading = [NSLayoutConstraint constraintWithItem:lookupButton
                                                                            attribute:NSLayoutAttributeLeading
@@ -132,31 +130,31 @@
                                                                               toItem:self.view
                                                                            attribute:NSLayoutAttributeLeading
                                                                           multiplier:1.0
-                                                                            constant:gutter];
+                                                                            constant:0.0];
     
     NSLayoutConstraint *lookupButtonBottom = [NSLayoutConstraint constraintWithItem:lookupButton
                                                                           attribute:NSLayoutAttributeBottom
                                                                           relatedBy:NSLayoutRelationEqual
                                                                              toItem:self.view
                                                                           attribute:NSLayoutAttributeBottom
-                                                                         multiplier:.14
+                                                                         multiplier:1.0
                                                                            constant:0.0];
     
     NSLayoutConstraint *lookupButtonTrailing = [NSLayoutConstraint constraintWithItem:lookupButton
                                                                             attribute:NSLayoutAttributeTrailing
                                                                             relatedBy:NSLayoutRelationEqual
-                                                                            toItem:self.view
+                                                                               toItem:self.view
                                                                             attribute:NSLayoutAttributeTrailing
                                                                            multiplier:1.0
-                                                                             constant:gutter];
+                                                                             constant:0.0];
     
     NSLayoutConstraint *bookButtonHeight = [NSLayoutConstraint constraintWithItem:bookButton
                                                                         attribute:NSLayoutAttributeHeight
                                                                         relatedBy:NSLayoutRelationEqual
                                                                            toItem:self.view
                                                                         attribute:NSLayoutAttributeHeight
-                                                                       multiplier:0.14
-                                                                         constant:1.0];
+                                                                       multiplier:0.3
+                                                                         constant:0.0];
     
     NSLayoutConstraint *browseButtonHeight = [NSLayoutConstraint constraintWithItem:browseButton
                                                                           attribute:NSLayoutAttributeHeight
@@ -209,7 +207,7 @@
 
 - (void)browseButtonSelected:(UIButton *)sender
 {
-//    [self.navigationController pushViewController:[[HotelsViewController alloc]init] animated:YES];
+    [self.navigationController pushViewController:[[HotelsViewController alloc]init] animated:YES];
 }
 
 - (void)bookButtonSelected:(UIButton *)sender
