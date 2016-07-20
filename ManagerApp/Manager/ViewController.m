@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HotelsViewController.h"
+#import "DatePickerViewController.h"
 
 @interface ViewController ()
 
@@ -208,7 +209,7 @@
 
 - (void)bookButtonSelected:(UIButton *)sender
 {
-    NSLog(@"book");
+    [self.navigationController pushViewController:[[DatePickerViewController alloc]init] animated:YES];
 }
 
 - (void)lookupButtonSelected:(UIButton *)sender
