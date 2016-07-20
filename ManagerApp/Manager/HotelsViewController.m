@@ -113,7 +113,7 @@
     
     Hotel *hotel = self.datasource[indexPath.row];
     cell.textLabel.text = hotel.name;
-    
+    NSLog(@"boo");
     return cell;
 }
 
@@ -124,7 +124,6 @@
     RoomsViewController *roomsViewController = [[RoomsViewController alloc]init];
     
     roomsViewController.hotel = hotel;
-    NSLog(roomsViewController.hotel);
     
     [self.navigationController pushViewController:roomsViewController animated:YES];
 }

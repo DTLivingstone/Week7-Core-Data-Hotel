@@ -75,7 +75,7 @@
                 
                 rooms = hotel[@"rooms"];
                 
-                NSMutableSet *rooms = [[NSMutableSet alloc]init];
+                NSMutableSet *roomsSet = [[NSMutableSet alloc]init];
                 
                 for (NSDictionary *room in rooms) {
                     
@@ -87,10 +87,10 @@
                     newRoom.rate = room[@"rate"];
                     newRoom.hotel = newHotel;
                     
-                    [rooms addObject:newRoom];
+                    [roomsSet addObject:newRoom];
                 }
                 
-                newHotel.rooms = rooms;
+                newHotel.rooms = roomsSet;
             }
             
             NSError *saveError;

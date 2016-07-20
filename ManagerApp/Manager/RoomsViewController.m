@@ -13,31 +13,11 @@
 
 @interface RoomsViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) NSArray *datasource;
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
 
 @implementation RoomsViewController
-
-- (NSArray *)datasource {
-    if (!_datasource) {
-        
-        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        NSManagedObjectContext *context = delegate.managedObjectContext;
-        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Room"];
-        NSError *fetchError;
-        
-        _datasource = [context executeFetchRequest:request
-                                             error:&fetchError];
-        
-        if (fetchError) {
-            NSLog(@"error loading room data");
-        }
-    }
-    
-    return _datasource;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,7 +27,7 @@
     [self.navigationItem setTitle:@"Rooms"];
     
     for (Room *room in self.hotel.rooms) {
-        NSLog(@"Room number: %@", room.number);
+        NSLog(@"Number %@, beds: %@, rate: %@", room.number, room.beds, room.rate);
     }
 }
 
@@ -95,7 +75,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datasource.count;
+    return self.hotel.rooms.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,10 +84,9 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"RoomCell"];
     }
     
-//    NSLog(self.hotel);
-    
     Room *room = (Room *)[self.hotel.rooms allObjects][indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"Number %@, beds: %@, rate: %@", room.number, room.beds, room.rate];
+    NSLog(@"foo");
     
     return cell;
 }
