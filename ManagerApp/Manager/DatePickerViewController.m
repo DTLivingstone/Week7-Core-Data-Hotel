@@ -60,7 +60,7 @@
     NSDate *startDate = [self.startPicker date];
     NSDate *endDate = [self.endPicker date];
     
-    if ([[NSDate date] timeIntervalSinceReferenceDate] > ([startDate timeIntervalSinceReferenceDate] || [endDate timeIntervalSinceReferenceDate])) {
+    if ([[NSDate date] timeIntervalSinceReferenceDate] > [startDate timeIntervalSinceReferenceDate] || [[NSDate date] timeIntervalSinceReferenceDate] > [endDate timeIntervalSinceReferenceDate]) {
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:@"Please select dates in the futre" preferredStyle:UIAlertControllerStyleAlert];
         
@@ -76,12 +76,12 @@
         
     }
     
-//    AvailableRoomsViewController *AvailableRoomsViewController = [[AvailableRoomsViewController alloc] init];
-//    
-//    AvailableRoomsViewController.startDate = startDate;
-//    AvailableRoomsViewController.endDate = endDate;
-//    
-//    [self.navigationController pushViewController:AvailabileRoomsViewController animated:YES];
+    AvailableRoomsViewController *availableRoomsViewController = [[AvailableRoomsViewController alloc] init];
+    
+    availableRoomsViewController.startDate = startDate;
+    availableRoomsViewController.endDate = endDate;
+    
+    [self.navigationController pushViewController:availableRoomsViewController animated:YES];
     
 }
 

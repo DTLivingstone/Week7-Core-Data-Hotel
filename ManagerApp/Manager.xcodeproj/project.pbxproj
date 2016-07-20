@@ -185,10 +185,10 @@
 				6329CCE01D3E5198007E682C /* HotelsViewController.m */,
 				63996B561D3FBBB500BCAAC9 /* DatePickerViewController.h */,
 				63996B571D3FBBB500BCAAC9 /* DatePickerViewController.m */,
-				63996B591D3FBBF600BCAAC9 /* BookViewController.h */,
-				63996B5A1D3FBBF600BCAAC9 /* BookViewController.m */,
 				63996B5F1D3FBF0900BCAAC9 /* AvailableRoomsViewController.h */,
 				63996B601D3FBF0900BCAAC9 /* AvailableRoomsViewController.m */,
+				63996B591D3FBBF600BCAAC9 /* BookViewController.h */,
+				63996B5A1D3FBBF600BCAAC9 /* BookViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
