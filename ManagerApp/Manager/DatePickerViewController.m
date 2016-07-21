@@ -78,8 +78,8 @@
     
     AvailableRoomsViewController *availableRoomsViewController = [[AvailableRoomsViewController alloc] init];
     
-    availableRoomsViewController.startDate = startDate;
-    availableRoomsViewController.endDate = endDate;
+    availableRoomsViewController.start = startDate;
+    availableRoomsViewController.end = endDate;
     
     [self.navigationController pushViewController:availableRoomsViewController animated:YES];
     

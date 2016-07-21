@@ -10,7 +10,7 @@
 
 @interface AvailableRoomsViewController : UIViewController
 
-@property(strong, nonatomic)NSDate *startDate;
-@property(strong, nonatomic)NSDate *endDate;
+@property(strong, nonatomic)NSDate *start;
+@property(strong, nonatomic)NSDate *end;
 
 @end
