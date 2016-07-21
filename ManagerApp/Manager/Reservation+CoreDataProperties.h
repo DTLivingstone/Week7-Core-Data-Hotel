@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSDate *end;
 @property (nullable, nonatomic, retain) NSDate *start;
-@property (nullable, nonatomic, retain) NSManagedObject *room;
+@property (nullable, nonatomic, retain) Room *room;
 @property (nullable, nonatomic, retain) Guest *guest;
 
 @end

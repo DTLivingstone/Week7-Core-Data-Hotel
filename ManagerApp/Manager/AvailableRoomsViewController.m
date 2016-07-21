@@ -124,7 +124,9 @@
     
     Room *room = self.datasource[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Room: %i \n %i beds $%0.2f per night", room.number.intValue, room.beds.intValue, room.rate.floatValue];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@: \nRoom %i %i beds, $%0.2f a night", room.hotel.name, room.number.intValue, room.beds.intValue, room.rate.floatValue];
+    
+    cell.textLabel.numberOfLines = 3;
     
     return cell;
 }
@@ -133,35 +135,14 @@
     
     Room *room = self.datasource[indexPath.row];
     
-//    BookViewController *bookViewController = [[BookViewController alloc]init];
-//    
-//    bookViewController.room = room;
-//    
-//    bookViewController.endDate = self.endDate;
-//    
-//    [self.navigationController pushViewController:bookViewController animated:YES];
+    BookViewController *bookViewController = [[BookViewController alloc]init];
+    
+    bookViewController.room = room;
+    
+    bookViewController.end = self.end;
+    
+    [self.navigationController pushViewController:bookViewController animated:YES];
     
 }
-
-//-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-//    
-//    return 150.0;
-//}
-//
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-//    
-//    UIImage *headerImage = [UIImage imageNamed:@"hotel"];
-//    
-//    UIImageView *imageView = [[UIImageView alloc]initWithImage:headerImage];
-//    
-//    imageView.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
-//    
-//    imageView.contentMode = UIViewContentModeScaleAspectFill;
-//    
-//    imageView.clipsToBounds = YES;
-//    
-//    return imageView;
-//    
-//}
 
 @end

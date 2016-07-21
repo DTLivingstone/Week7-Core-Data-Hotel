@@ -26,6 +26,7 @@
 		63996B581D3FBBB500BCAAC9 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63996B571D3FBBB500BCAAC9 /* DatePickerViewController.m */; };
 		63996B5B1D3FBBF600BCAAC9 /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63996B5A1D3FBBF600BCAAC9 /* BookViewController.m */; };
 		63996B611D3FBF0900BCAAC9 /* AvailableRoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63996B601D3FBF0900BCAAC9 /* AvailableRoomsViewController.m */; };
+		63A7FC8D1D414FB60045C9D1 /* NSObject+NSManagedObjectContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A7FC8C1D414FB60045C9D1 /* NSObject+NSManagedObjectContext.m */; };
 		63CD660A1D3D8A4B004CCDE0 /* hotel.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CD66071D3D8A4B004CCDE0 /* hotel.png */; };
 		63CD660B1D3D8A4B004CCDE0 /* hotels.json in Resources */ = {isa = PBXBuildFile; fileRef = 63CD66081D3D8A4B004CCDE0 /* hotels.json */; };
 		63CD660C1D3D8A4B004CCDE0 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CD66091D3D8A4B004CCDE0 /* room.png */; };
@@ -68,6 +69,8 @@
 		63996B5A1D3FBBF600BCAAC9 /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		63996B5F1D3FBF0900BCAAC9 /* AvailableRoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableRoomsViewController.h; sourceTree = "<group>"; };
 		63996B601D3FBF0900BCAAC9 /* AvailableRoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableRoomsViewController.m; sourceTree = "<group>"; };
+		63A7FC8B1D414FB60045C9D1 /* NSObject+NSManagedObjectContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSManagedObjectContext.h"; sourceTree = "<group>"; };
+		63A7FC8C1D414FB60045C9D1 /* NSObject+NSManagedObjectContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NSManagedObjectContext.m"; sourceTree = "<group>"; };
 		63CD66071D3D8A4B004CCDE0 /* hotel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel.png; sourceTree = "<group>"; };
 		63CD66081D3D8A4B004CCDE0 /* hotels.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hotels.json; sourceTree = "<group>"; };
 		63CD66091D3D8A4B004CCDE0 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = room.png; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		6306EE031D3D74020011F7E6 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				63A7FC811D414DA60045C9D1 /* ObjectContext */,
 				63CD66031D3D896C004CCDE0 /* App Global */,
 				63CD66061D3D8991004CCDE0 /* Controller */,
 				63CD66041D3D8982004CCDE0 /* Model */,
@@ -119,6 +123,15 @@
 				6306EE051D3D74020011F7E6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63A7FC811D414DA60045C9D1 /* ObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				63A7FC8B1D414FB60045C9D1 /* NSObject+NSManagedObjectContext.h */,
+				63A7FC8C1D414FB60045C9D1 /* NSObject+NSManagedObjectContext.m */,
+			);
+			name = ObjectContext;
 			sourceTree = "<group>";
 		};
 		63CD66021D3D8956004CCDE0 /* Assets */ = {
@@ -280,6 +293,7 @@
 				631D1CA61D3E6E9500912573 /* RoomsViewController.m in Sources */,
 				6306EE061D3D74020011F7E6 /* main.m in Sources */,
 				63996B611D3FBF0900BCAAC9 /* AvailableRoomsViewController.m in Sources */,
+				63A7FC8D1D414FB60045C9D1 /* NSObject+NSManagedObjectContext.m in Sources */,
 				63996B581D3FBBB500BCAAC9 /* DatePickerViewController.m in Sources */,
 				6306EE121D3D74020011F7E6 /* Manager.xcdatamodeld in Sources */,
 			);

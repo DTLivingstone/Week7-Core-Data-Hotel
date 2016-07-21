@@ -11,6 +11,7 @@
 
 #import "Room.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Room (CoreDataProperties)
@@ -18,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *beds;
 @property (nullable, nonatomic, retain) NSNumber *number;
 @property (nullable, nonatomic, retain) NSDecimalNumber *rate;
-@property (nullable, nonatomic, retain) NSManagedObject *hotel;
+@property (nullable, nonatomic, retain) Hotel *hotel;
 @property (nullable, nonatomic, retain) Reservation *reservation;
 
 @end

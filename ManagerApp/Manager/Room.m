@@ -8,6 +8,8 @@
 
 #import "Room.h"
 #import "Reservation.h"
+#import "Hotel.h"
+
 
 @implementation Room
 
