@@ -1,9 +1,9 @@
 //
 //  Reservation.m
-//  Manager
+//  HotelManager
 //
-//  Created by David Livingstone on 7/18/16.
-//  Copyright © 2016 David Livingstone. All rights reserved.
+//  Created by Michael Babiy on 11/30/15.
+//  Copyright © 2015 Michael Babiy. All rights reserved.
 //
 
 #import "Reservation.h"
@@ -12,14 +12,16 @@
 
 @implementation Reservation
 
-+(instancetype)reservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Room *)room {
++(instancetype)reservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Room *)room{
     
     Reservation *reservation = [NSEntityDescription insertNewObjectForEntityForName:@"Reservation" inManagedObjectContext:[NSObject managerContext]];
     
-    reservation.start = startDate;
-    reservation.end = endDate;
+    reservation.startDate = startDate;
+    reservation.endDate = endDate;
     reservation.room = room;
     
     return reservation;
 }
+
+
 @end

@@ -1,20 +1,22 @@
 //
 //  Reservation.h
-//  Manager
+//  HotelManager
 //
-//  Created by David Livingstone on 7/18/16.
-//  Copyright © 2016 David Livingstone. All rights reserved.
+//  Created by Michael Babiy on 11/30/15.
+//  Copyright © 2015 Michael Babiy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+
 #import "Room.h"
 
-@class Guest;
+@class Room;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Reservation : NSManagedObject
+
 
 +(instancetype)reservationWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate room:(Room *)room;
 
