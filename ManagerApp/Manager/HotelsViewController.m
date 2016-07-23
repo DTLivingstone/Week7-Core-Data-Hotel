@@ -10,35 +10,34 @@
 #import "AppDelegate.h"
 #import "Hotel.h"
 #import "RoomsViewController.h"
+#import "NSObject+NSManagedObjectContext.h"
 
-@interface HotelsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HotelsViewController () <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 
-@property (strong, nonatomic) NSArray *datasource;
+//@property (strong, nonatomic) NSArray *datasource;
+@property (strong, nonatomic) NSFetchedResultsController * fetchedResultsController;
 @property (strong, nonatomic) UITableView *tableView;
 
 @end
 
 @implementation HotelsViewController
 
-// fetch data
-
-- (NSArray *)datasource {
-    if (!_datasource) {
-        
-        AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
-        NSManagedObjectContext *context = delegate.managedObjectContext;
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (!_fetchedResultsController) {
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hotel"];
-        NSError *fetchError;
-        
-        _datasource = [context executeFetchRequest:request
-                                             error:&fetchError];
-        
-        if (fetchError) {
-            NSLog(@"error loading hotel data");
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:[NSManagedObject managerContext] sectionNameKeyPath:nil cacheName:nil];
+        _fetchedResultsController.delegate = self;
+        NSError *error;
+        [_fetchedResultsController performFetch:&error];
+        if (error) {
+            NSLog(@"Error: %@", error.localizedDescription);
+        } else {
+            NSLog(@"Fetch successful");
+            
         }
     }
-    
-    return _datasource;
+    return _fetchedResultsController;
 }
 
 - (void)viewDidLoad {
@@ -56,8 +55,6 @@
     
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    
-    // set table view to full size of view
     
     NSLayoutConstraint *leading = [NSLayoutConstraint constraintWithItem:self.tableView
                                                                attribute:NSLayoutAttributeLeading
@@ -101,7 +98,8 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datasource.count;
+    id<NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,16 +109,15 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     
-    Hotel *hotel = self.datasource[indexPath.row];
+    Hotel *hotel = [self.fetchedResultsController objectAtIndexPath: indexPath];
     cell.textLabel.text = hotel.name;
-    NSLog(@"boo");
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Hotel *hotel = self.datasource[indexPath.row];
+    Hotel *hotel = [self.fetchedResultsController objectAtIndexPath: indexPath];
     RoomsViewController *roomsViewController = [[RoomsViewController alloc]init];
     
     roomsViewController.hotel = hotel;

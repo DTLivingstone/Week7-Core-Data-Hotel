@@ -11,7 +11,7 @@
 
 @implementation NSObject (NSManagedObjectContext)
 
-+(NSManagedObjectContext *)managerContext{
++(NSManagedObjectContext *)managerContext {
     
     AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     

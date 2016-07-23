@@ -25,12 +25,7 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self setupTableView];
     [self.navigationItem setTitle:@"Rooms"];
-    
-    for (Room *room in self.hotel.rooms) {
-        NSLog(@"Number %@, beds: %@, rate: %@", room.number, room.beds, room.rate);
-    }
 }
-
 
 - (void)setupTableView {
     self.tableView = [[UITableView alloc]init];
@@ -86,8 +81,8 @@
     
     Room *room = (Room *)[self.hotel.rooms allObjects][indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"Number %@, beds: %@, rate: %@", room.number, room.beds, room.rate];
-    NSLog(@"foo");
     
     return cell;
 }
+
 @end

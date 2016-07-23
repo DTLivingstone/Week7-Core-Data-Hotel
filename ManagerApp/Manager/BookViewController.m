@@ -78,6 +78,8 @@
 -(void)saveButtonSelected:(UIBarButtonItem *)sender {
     Reservation *reservation = [Reservation reservationWithStartDate:[NSDate date] endDate:self.end room:self.room];
     
+    // pass self.room.reservation to addReservation
+    
     self.room.reservation = reservation;
     
     reservation.guest = [Guest guestWithEmail:self.emailField.text first:self.firstNameField.text last:self.lastNameField.text];

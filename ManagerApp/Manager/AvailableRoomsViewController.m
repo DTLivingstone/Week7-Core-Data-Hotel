@@ -87,6 +87,8 @@
         
         NSArray *results = [delegate.managedObjectContext executeFetchRequest:request error:nil];
         
+        // not sure how to break this out
+        
         NSMutableArray *unavailableRooms = [[NSMutableArray alloc]init];
         
         for (Reservation *reservation in results) {
