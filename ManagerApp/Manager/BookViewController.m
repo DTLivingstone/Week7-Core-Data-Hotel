@@ -8,6 +8,7 @@
 
 #import "BookViewController.h"
 #import "NSObject+NSManagedObjectContext.h"
+#import "ReservationService.h"
 
 @interface BookViewController ()
 
@@ -80,6 +81,10 @@
     
     // pass self.room.reservation to addReservation
     
+//    [ self.room.reservation];
+    
+    
+    
     self.room.reservation = reservation;
     
     reservation.guest = [Guest guestWithEmail:self.emailField.text first:self.firstNameField.text last:self.lastNameField.text];
@@ -89,9 +94,9 @@
     
     if (error) {
         NSLog(@"Save error: %@", error);
-    } else {
-        [self.navigationController popToRootViewControllerAnimated:YES];
     }
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

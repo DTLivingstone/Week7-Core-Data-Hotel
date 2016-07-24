@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6302BC241D442C2E00C97049 /* ManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6302BC231D442C2E00C97049 /* ManagerTests.m */; };
 		6306EE061D3D74020011F7E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6306EE051D3D74020011F7E6 /* main.m */; };
 		6306EE091D3D74020011F7E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6306EE081D3D74020011F7E6 /* AppDelegate.m */; };
 		6306EE0C1D3D74020011F7E6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6306EE0B1D3D74020011F7E6 /* ViewController.m */; };
@@ -33,7 +34,20 @@
 		63CD660C1D3D8A4B004CCDE0 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CD66091D3D8A4B004CCDE0 /* room.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6302BC261D442C2E00C97049 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6306EDF91D3D74020011F7E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6306EE001D3D74020011F7E6;
+			remoteInfo = Manager;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6302BC211D442C2E00C97049 /* ManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6302BC231D442C2E00C97049 /* ManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerTests.m; sourceTree = "<group>"; };
+		6302BC251D442C2E00C97049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6306EE011D3D74020011F7E6 /* Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6306EE051D3D74020011F7E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6306EE071D3D74020011F7E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,6 +94,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6302BC1E1D442C2E00C97049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6306EDFE1D3D74020011F7E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,10 +111,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6302BC221D442C2E00C97049 /* ManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				6302BC231D442C2E00C97049 /* ManagerTests.m */,
+				6302BC251D442C2E00C97049 /* Info.plist */,
+			);
+			path = ManagerTests;
+			sourceTree = "<group>";
+		};
 		6306EDF81D3D74020011F7E6 = {
 			isa = PBXGroup;
 			children = (
 				6306EE031D3D74020011F7E6 /* Manager */,
+				6302BC221D442C2E00C97049 /* ManagerTests */,
 				6306EE021D3D74020011F7E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				6306EE011D3D74020011F7E6 /* Manager.app */,
+				6302BC211D442C2E00C97049 /* ManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +254,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6302BC201D442C2E00C97049 /* ManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6302BC2A1D442C2E00C97049 /* Build configuration list for PBXNativeTarget "ManagerTests" */;
+			buildPhases = (
+				6302BC1D1D442C2E00C97049 /* Sources */,
+				6302BC1E1D442C2E00C97049 /* Frameworks */,
+				6302BC1F1D442C2E00C97049 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6302BC271D442C2E00C97049 /* PBXTargetDependency */,
+			);
+			name = ManagerTests;
+			productName = ManagerTests;
+			productReference = 6302BC211D442C2E00C97049 /* ManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6306EE001D3D74020011F7E6 /* Manager */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6306EE1B1D3D74020011F7E6 /* Build configuration list for PBXNativeTarget "Manager" */;
@@ -248,6 +298,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "David Livingstone";
 				TargetAttributes = {
+					6302BC201D442C2E00C97049 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 6306EE001D3D74020011F7E6;
+					};
 					6306EE001D3D74020011F7E6 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -267,11 +321,19 @@
 			projectRoot = "";
 			targets = (
 				6306EE001D3D74020011F7E6 /* Manager */,
+				6302BC201D442C2E00C97049 /* ManagerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6302BC1F1D442C2E00C97049 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6306EDFF1D3D74020011F7E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -287,6 +349,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6302BC1D1D442C2E00C97049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6302BC241D442C2E00C97049 /* ManagerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6306EDFD1D3D74020011F7E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -315,6 +385,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6302BC271D442C2E00C97049 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6306EE001D3D74020011F7E6 /* Manager */;
+			targetProxy = 6302BC261D442C2E00C97049 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		6306EE151D3D74020011F7E6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -327,6 +405,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6302BC281D442C2E00C97049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tl.david.ManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Manager.app/Manager";
+			};
+			name = Debug;
+		};
+		6302BC291D442C2E00C97049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = tl.david.ManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Manager.app/Manager";
+			};
+			name = Release;
+		};
 		6306EE191D3D74020011F7E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -436,6 +538,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6302BC2A1D442C2E00C97049 /* Build configuration list for PBXNativeTarget "ManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6302BC281D442C2E00C97049 /* Debug */,
+				6302BC291D442C2E00C97049 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		6306EDFC1D3D74020011F7E6 /* Build configuration list for PBXProject "Manager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

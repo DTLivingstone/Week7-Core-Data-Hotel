@@ -24,7 +24,7 @@
 
 - (void)addReservaiton {
     
-    
+    NSLog(@"foo");
 }
 
 @end
